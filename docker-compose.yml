@@ -2,7 +2,7 @@
 version: '3'
 services:
   vue-app:
-    image: vue-docker-vue-app  # 이미 빌드된 이미지 사용  
+    image: vue-docker-talki-app  # 이미 빌드된 이미지 사용  
     build: .
     ports:
       - "8080:8080"

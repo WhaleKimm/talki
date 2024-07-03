@@ -1,23 +1,26 @@
-# Dockerfile
+# Node.js 14 이미지를 기반으로 사용
 FROM node:14
 
-# Create app directory
+# 앱 디렉토리 생성
 WORKDIR /app
 
-# Install Vue CLI globally
+# npm 캐시 디렉토리 설정
+RUN npm set cache /app/.npm-cache --global
+
+# Vue CLI를 전역으로 설치
 RUN npm install -g @vue/cli
 
-# Copy package.json and package-lock.json if they exist
+# package.json과 package-lock.json을 복사
 COPY package*.json ./
 
-# Install app dependencies
+# 종속성 설치
 RUN npm install
 
-# Copy the rest of the application code
+# 프로젝트 코드 복사
 COPY . .
 
-# Expose port 8080
+# 포트 8080 노출
 EXPOSE 8080
 
-# Run Vue development server
+# 프로젝트 생성 및 Vue 개발 서버 실행
 CMD ["npm", "run", "serve"]
