@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <router-view></router-view> <!-- 라우터 뷰 추가 -->
+    <nav>
+      <ul>
+        <li><router-link to="/">RoleplaySelectionScreen</router-link></li>
+      </ul>
+    </nav>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -18,5 +23,24 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 20px;
+}
+
+nav {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  margin-right: 10px;
+}
+
+router-link {
+  text-decoration: none;
+  color: #42b983;
 }
 </style>
