@@ -1,12 +1,12 @@
 <template>
-  <!-- 롤플레이 화면 템플릿 -->
-  <div class="roleplay-screen">
+  <!-- 업로드 화면 템플릿 -->
+  <div class="upload-screen">
     <!-- 웹 사이드바 컴포넌트 -->
     <WebSidebar />
     <!-- 컨텐츠 영역 -->
     <div class="content">
-      <h1>Roleplay Screen</h1> <!-- 롤플레이 화면 제목 -->
-      <p>롤플레이 기능, 페이지 컨텐츠 추가</p> <!-- 설명 문구 -->
+      <h1>Upload Screen</h1> <!-- 업로드 화면 제목 -->
+      <p>업로드 기능, 페이지 컨텐츠 추가</p> <!-- 설명 문구 -->
     </div>
   </div>
 </template>
@@ -16,7 +16,7 @@
 import WebSidebar from '../Bar/WebSidebar.vue';
 
 export default {
-  name: 'RoleplaySelectionScreen', // 컴포넌트 이름
+  name: 'UploadSelectionScreen', // 컴포넌트 이름
   components: {
     WebSidebar, // 웹 사이드바 컴포넌트 등록
   },
@@ -24,8 +24,8 @@ export default {
 </script>
 
 <style scoped>
-/* 롤플레이 화면 스타일 */
-.roleplay-screen {
+/* 업로드 화면 스타일 */
+.upload-screen {
   display: flex; /* 플렉스 박스로 배치 */
 }
 
