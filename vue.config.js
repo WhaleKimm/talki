@@ -1,8 +1,7 @@
-const { defineConfig } = require('@vue/cli-service')
 const path = require('path')
 
-module.exports = defineConfig({
-  transpileDependencies: true,
+module.exports = {
+  transpileDependencies: [], // 빈 배열 또는 필요한 종속성을 포함한 배열로 수정
   configureWebpack: {
     resolve: {
       alias: {
@@ -10,4 +9,4 @@ module.exports = defineConfig({
       },
     },
   },
-})
+}

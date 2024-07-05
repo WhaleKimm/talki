@@ -12,7 +12,7 @@
     "core-js": "^3.8.3",
     "vue": "^3.4.31",
     "vue-router": "^4.4.0",
-    "vuetify": "^3.6.0"
+    "vuetify": "^3.6.0-beta.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -22,7 +22,8 @@
     "@eslint/object-schema": "^2.1.4",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-service": "^3.3.1",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/compiler-sfc": "^3.4.31",
     "consolidate": "^1.0.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -68,7 +69,5 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ],
-  "_id": "app@0.1.0",
-  "readme": "ERROR: No README data found!"
+  ]
 }

@@ -18,7 +18,7 @@ services:
     command: npm run serve
 
   prettier:
-    image: node:16-alpine
+    image: node:18-alpine
     working_dir: /app
     volumes:
       - .:/app
