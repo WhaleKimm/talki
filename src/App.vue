@@ -1,15 +1,22 @@
 <template>
   <!-- 루트 앱 컴포넌트 -->
   <div id="app">
-    <!-- 뷰 라우터를 통해 동적으로 컴포넌트를 로드합니다 -->
+    <nav>
+      <ul>
+        <li><router-link to="/roleplay">Roleplay</router-link></li>
+        <li><router-link to="/presentation">Presentation</router-link></li>
+        <li><router-link to="/interview">Interview</router-link></li>
+      </ul>
+    </nav>
     <router-view></router-view>
+    <!-- 라우터 뷰 추가 -->
   </div>
 </template>
 
 <script>
 export default {
   name: 'App', // 앱 컴포넌트의 이름
-};
+}
 </script>
 
 <style>
@@ -21,5 +28,27 @@ export default {
   text-align: center; /* 텍스트 가운데 정렬 */
   color: #2c3e50; /* 텍스트 색상 */
   margin-top: 60px; /* 위쪽 마진 설정 */
+}
+
+nav {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* 세로로 정렬 */
+  align-items: flex-start; /* 아이템을 왼쪽 정렬 */
+}
+
+li {
+  margin-bottom: 10px; /* 탭 사이의 간격 */
+}
+
+router-link {
+  text-decoration: none;
+  color: #42b983;
+  writing-mode: vertical-rl; /* 텍스트를 세로로 회전 */
 }
 </style>

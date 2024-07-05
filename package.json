@@ -10,7 +10,9 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^3.4.31",
-    "vue-router": "^4.4.0"
+    "vue-router": "^4.4.0",
+    "vuetify": "^3.0.0",
+    "@mdi/font": "^7.0.96"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -19,7 +21,13 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.0.3",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1",
+    "eslint-plugin-json": "^3.1.0"
   },
   "eslintConfig": {
     "root": true,
@@ -28,12 +36,22 @@
     },
     "extends": [
       "plugin:vue/vue3-essential",
-      "eslint:recommended"
+      "eslint:recommended",
+      "airbnb-base",
+      "plugin:prettier/recommended"
     ],
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
-    "rules": {}
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "semi": false
+        }
+      ]
+    }
   },
   "browserslist": [
     "> 1%",

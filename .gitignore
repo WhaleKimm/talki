@@ -18,7 +18,7 @@ pnpm-debug.log*
 
 # Editor directories and files
 .idea
-.vscode
+# .vscode # Setting.json은 예외로 받아오기
 *.suo
 *.ntvs*
 *.njsproj

@@ -13,6 +13,9 @@ RUN npm install -g @vue/cli
 # package.json과 package-lock.json을 복사
 COPY package*.json ./
 
+# ESLint와 관련된 패키지를 설치
+RUN npm install eslint eslint-config-airbnb-base eslint-plugin-import eslint-plugin-vue @babel/eslint-parser eslint-plugin-prettier eslint-config-prettier prettier --save-dev
+
 # 종속성 설치
 RUN npm install
 

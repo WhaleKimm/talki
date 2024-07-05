@@ -5,22 +5,24 @@
     <WebSidebar />
     <!-- 컨텐츠 영역 -->
     <div class="content">
-      <h1>Main Screen</h1> <!-- 메인 스크린 제목 -->
-      <p>여기에 과거 진행한 세션 라이브러리 추가</p> <!-- 설명 문구 -->
+      <h1>Main Screen</h1>
+      <!-- 메인 스크린 제목 -->
+      <p>여기에 과거 진행한 세션 라이브러리 추가</p>
+      <!-- 설명 문구 -->
     </div>
   </div>
 </template>
 
 <script>
 // 웹 사이드바 컴포넌트 임포트
-import WebSidebar from '../Bar/WebSidebar.vue';
+import WebSidebar from '../Bar/WebSidebar.vue'
 
 export default {
   name: 'MainScreen', // 컴포넌트 이름
   components: {
     WebSidebar, // 웹 사이드바 컴포넌트 등록
   },
-};
+}
 </script>
 
 <style scoped>

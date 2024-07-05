@@ -1,0 +1,44 @@
+{
+  "eslint.options": {
+      "configFile": ".eslintrc.js" // .eslintrc.js 파일을 사용하도록 설정
+  },
+  "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "vue",
+      "json" // json 파일도 ESLint 검사에 포함
+  ],
+  "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.singleQuote": true,
+  "prettier.semi": true,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.trailingComma": "es5",
+  "prettier.endOfLine": "lf",
+  "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dart]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnType": true,
+      "editor.rulers": [
+          80
+      ],
+      "editor.selectionHighlight": false,
+      "editor.suggestSelection": "first",
+      "editor.tabCompletion": "onlySnippets",
+      "editor.wordBasedSuggestions": "off"
+  },
+  "editor.accessibilitySupport": "on",
+  "git.autofetch": true
+}
