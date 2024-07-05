@@ -24,8 +24,10 @@ module.exports = {
         trailingComma: 'es5',
         printWidth: 100,
         tabWidth: 2,
+        endOfLine: 'lf',
       },
     ],
+    'import/no-unresolved': 'off', // 이 줄을 추가하여 import/no-unresolved 규칙을 비활성화합니다.
     'no-console': 'off', // 콘솔 로그 허용
     'no-alert': 'off', // alert 허용
   },
