@@ -1,10 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue' // 앱 컴포넌트를 임포트합니다
 import router from './router' // 라우터를 임포트합니다
+import vuetify from './plugins/vuetify' // vuetify 플러그인을 임포트합니다
 
 const app = createApp(App) // Vue 앱을 생성합니다
 
 app.use(router) // 앱에 라우터를 추가합니다
+app.use(vuetify) // 앱에 vuetify를 추가합니다
 
 // Hot Module Replacement (HMR) 설정
 if (import.meta.hot) {

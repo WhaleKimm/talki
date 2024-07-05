@@ -1,6 +1,6 @@
-version: '3'
+version: '3.8'
 services:
-  vue-app:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
@@ -16,3 +16,10 @@ services:
     stdin_open: true
     tty: true
     command: npm run serve
+
+  prettier:
+    image: node:16-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+    entrypoint: ['sh', '-c', 'npm install && npx prettier --write .']
