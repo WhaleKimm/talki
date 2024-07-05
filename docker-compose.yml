@@ -1,16 +1,17 @@
-# docker-compose.yml
 version: '3'
 services:
   vue-app:
-    image: vue-docker-talki-app  # 이미 빌드된 이미지 사용  
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vue-docker-talki-app
     ports:
-      - "8080:8080"
+      - '8080:8080'
     volumes:
       - .:/app
       - /app/node_modules
     environment:
-      - WATCHPACK_POLLING=true # 존@나 중요! 윈도우 터미널에서 핫로드 시에 꼭 필요하다.
+      - WATCHPACK_POLLING=true
       - NODE_ENV=development
     stdin_open: true
     tty: true

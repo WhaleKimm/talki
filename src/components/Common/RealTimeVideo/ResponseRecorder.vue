@@ -8,25 +8,25 @@
 </template>
 
 <script>
-import { store } from '@/store';
+import { store } from '@/store'
 
 export default {
   props: {
     buttonText: {
       type: String,
-      default: 'Start Conversation'
-    }
+      default: 'Start Conversation',
+    },
   },
   setup(props, { emit }) {
     // 녹화를 시작하는 함수입니다.
     const handleStart = () => {
-      store.startRecording();
-      emit('start');  // 부모 컴포넌트로 이벤트 전달
-    };
+      store.startRecording()
+      emit('start') // 부모 컴포넌트로 이벤트 전달
+    }
 
-    return { store, handleStart };
-  }
-};
+    return { store, handleStart }
+  },
+}
 </script>
 
 <style scoped>

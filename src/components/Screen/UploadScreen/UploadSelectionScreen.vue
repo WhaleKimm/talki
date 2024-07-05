@@ -5,22 +5,24 @@
     <WebSidebar />
     <!-- 컨텐츠 영역 -->
     <div class="content">
-      <h1>Upload Screen</h1> <!-- 업로드 화면 제목 -->
-      <p>업로드 기능, 페이지 컨텐츠 추가</p> <!-- 설명 문구 -->
+      <h1>Upload Screen</h1>
+      <!-- 업로드 화면 제목 -->
+      <p>업로드 기능, 페이지 컨텐츠 추가</p>
+      <!-- 설명 문구 -->
     </div>
   </div>
 </template>
 
 <script>
 // 웹 사이드바 컴포넌트 임포트
-import WebSidebar from '../Bar/WebSidebar.vue';
+import WebSidebar from '../Bar/WebSidebar.vue'
 
 export default {
   name: 'UploadSelectionScreen', // 컴포넌트 이름
   components: {
     WebSidebar, // 웹 사이드바 컴포넌트 등록
   },
-};
+}
 </script>
 
 <style scoped>

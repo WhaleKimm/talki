@@ -1,14 +1,22 @@
 <template>
   <!-- 루트 앱 컴포넌트 -->
   <div id="app">
-    <router-view></router-view> <!-- 라우터 뷰 추가 -->
+    <nav>
+      <ul>
+        <li><router-link to="/roleplay">Roleplay</router-link></li>
+        <li><router-link to="/presentation">Presentation</router-link></li>
+        <li><router-link to="/interview">Interview</router-link></li>
+      </ul>
+    </nav>
+    <router-view></router-view>
+    <!-- 라우터 뷰 추가 -->
   </div>
 </template>
 
 <script>
 export default {
   name: 'App', // 앱 컴포넌트의 이름
-};
+}
 </script>
 
 <style>
@@ -29,15 +37,18 @@ nav {
 ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-direction: column; /* 세로로 정렬 */
+  align-items: flex-start; /* 아이템을 왼쪽 정렬 */
 }
 
 li {
-  display: inline;
-  margin-right: 10px;
+  margin-bottom: 10px; /* 탭 사이의 간격 */
 }
 
 router-link {
   text-decoration: none;
   color: #42b983;
+  writing-mode: vertical-rl; /* 텍스트를 세로로 회전 */
 }
 </style>
