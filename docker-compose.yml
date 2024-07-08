@@ -17,9 +17,28 @@ services:
     tty: true
     command: npm run serve
 
+  eslint:
+    image: node:18-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+    entrypoint: ['sh', '-c', 'npm install && npx eslint --fix .']
+
   prettier:
     image: node:18-alpine
     working_dir: /app
     volumes:
       - .:/app
     entrypoint: ['sh', '-c', 'npm install && npx prettier --write .']
+
+  watcher:
+    image: node:18-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+    entrypoint:
+      [
+        'sh',
+        '-c',
+        'npm install && npx chokidar "**/*.js" "**/*.vue" -c "npx prettier --write {path} && npx eslint --fix {path}"',
+      ]

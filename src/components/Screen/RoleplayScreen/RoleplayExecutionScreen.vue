@@ -1,9 +1,9 @@
 <template>
-  <div class="roleplay-selection-screen">
+  <div class="roleplay-execution-screen">
     <div class="camera-view">
       <video ref="video" autoplay></video>
     </div>
-    <button @click="startRecording">Start Recording</button>
+    <button @click="stopRecording" :disabled="!store.isRecording">Stop Recording</button>
   </div>
 </template>
 
@@ -14,12 +14,12 @@ import store from '@/store'
 export default {
   setup() {
     const router = useRouter()
-    const startRecording = async () => {
-      await store.startRecording()
-      router.push({ name: 'RoleplayExecutionScreen' })
+    const stopRecording = () => {
+      store.stopRecording()
+      router.push({ name: 'RoleplaySelectionScreen' })
     }
 
-    return { startRecording }
+    return { stopRecording, store }
   },
   mounted() {
     navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then((stream) => {
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style scoped>
-.roleplay-selection-screen {
+.roleplay-execution-screen {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,10 +45,14 @@ export default {
 }
 button {
   padding: 15px 30px;
-  background-color: #28a745;
+  background-color: #dc3545;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
 }
 </style>
