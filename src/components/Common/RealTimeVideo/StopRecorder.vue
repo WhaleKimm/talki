@@ -1,7 +1,9 @@
 <template>
   <div class="stop-recorder">
     <!-- 녹화 상태에 따라 버튼을 활성화 또는 비활성화합니다. -->
-    <button @click="stopRecording" :disabled="!store.isRecording">Stop Recording</button>
+    <button @click="stopRecording" :disabled="!store.isRecording">
+      Stop Recording
+    </button>
   </div>
 </template>
 

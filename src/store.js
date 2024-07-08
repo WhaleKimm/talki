@@ -11,7 +11,10 @@ const store = reactive({
     this.isRecording = true // 녹화 상태를 true로 설정
     try {
       // 사용자에게 카메라와 마이크 권한을 요청하여 스트림을 가져옴
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: true,
+      })
       // MediaRecorder 객체를 생성하여 스트림을 전달
       this.mediaRecorder = new MediaRecorder(stream)
 

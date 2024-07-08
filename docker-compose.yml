@@ -22,14 +22,16 @@ services:
     working_dir: /app
     volumes:
       - .:/app
-    entrypoint: ['sh', '-c', 'npm install && npx eslint --fix .']
+    entrypoint:
+      ['sh', '-c', 'npm install --legacy-peer-deps && npx eslint --fix .']
 
   prettier:
     image: node:18-alpine
     working_dir: /app
     volumes:
       - .:/app
-    entrypoint: ['sh', '-c', 'npm install && npx prettier --write .']
+    entrypoint:
+      ['sh', '-c', 'npm install --legacy-peer-deps && npx prettier --write .']
 
   watcher:
     image: node:18-alpine
@@ -40,5 +42,5 @@ services:
       [
         'sh',
         '-c',
-        'npm install && npx chokidar "**/*.js" "**/*.vue" -c "npx prettier --write {path} && npx eslint --fix {path}"',
+        'npm install --legacy-peer-deps && npx chokidar "**/*.js" "**/*.vue" -c "npx prettier --write {path} && npx eslint --fix {path}"',
       ]

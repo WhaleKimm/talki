@@ -22,12 +22,16 @@ export default {
     async setupCamera() {
       try {
         // 사용자에게 카메라와 마이크 권한을 요청합니다.
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: true,
+          audio: true,
+        })
         this.$refs.video.srcObject = stream // 비디오 요소에 스트림을 설정합니다.
         this.stream = stream // 스트림을 저장합니다.
       } catch (err) {
         console.error('Error accessing camera:', err)
-        this.errorMessage = 'Error accessing camera. Please check your permissions and try again.'
+        this.errorMessage =
+          'Error accessing camera. Please check your permissions and try again.'
       }
     },
   },

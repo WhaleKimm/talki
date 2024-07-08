@@ -3,7 +3,9 @@
     <div class="camera-view">
       <video ref="video" autoplay></video>
     </div>
-    <button @click="stopRecording" :disabled="!store.isRecording">Stop Recording</button>
+    <button @click="stopRecording" :disabled="!store.isRecording">
+      Stop Recording
+    </button>
   </div>
 </template>
 
@@ -22,9 +24,11 @@ export default {
     return { stopRecording, store }
   },
   mounted() {
-    navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then((stream) => {
-      this.$refs.video.srcObject = stream
-    })
+    navigator.mediaDevices
+      .getUserMedia({ video: true, audio: false })
+      .then((stream) => {
+        this.$refs.video.srcObject = stream
+      })
   },
 }
 </script>

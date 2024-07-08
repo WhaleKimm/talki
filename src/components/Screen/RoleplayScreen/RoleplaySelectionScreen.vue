@@ -22,9 +22,11 @@ export default {
     return { startRecording }
   },
   mounted() {
-    navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then((stream) => {
-      this.$refs.video.srcObject = stream
-    })
+    navigator.mediaDevices
+      .getUserMedia({ video: true, audio: false })
+      .then((stream) => {
+        this.$refs.video.srcObject = stream
+      })
   },
 }
 </script>
