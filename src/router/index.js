@@ -4,7 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import MainScreen from '../components/Screen/Common/MainScreen.vue'
 import InterviewSelectionScreen from '../components/Screen/InterviewScreen/InterviewSelectionScreen.vue'
 import PresentationSelectionScreen from '../components/Screen/PresentationScreen/PresentationScreen.vue'
-import RoleplaySelectionScreen from '../components/Screen/RoleplayScreen/RoleplaySelectionScreen.vue'
+import RoleplayScreen from '../components/Screen/RoleplayScreen/RoleplayScreen.vue'
 import UploadSelectionScreen from '../components/Screen/UploadScreen/UploadSelectionScreen.vue'
 
 // 네비게이션을 위한 라우트들을 정의합니다
@@ -22,8 +22,8 @@ const routes = [
   }, // 프리젠테이션 화면 라우트
   {
     path: '/roleplay',
-    name: 'RoleplaySelectionScreen',
-    component: RoleplaySelectionScreen,
+    name: 'RoleplayScreen',
+    component: RoleplayScreen,
   }, // 롤플레이 화면 라우트
   {
     path: '/upload',
