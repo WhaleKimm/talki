@@ -1,0 +1,5 @@
+{
+  "watch": ["src"],
+  "ext": "js,vue",
+  "exec": "npm audit fix --force && npm run serve"
+}

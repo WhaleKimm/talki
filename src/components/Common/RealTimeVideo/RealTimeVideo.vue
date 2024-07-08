@@ -1,7 +1,14 @@
 <template>
   <div class="real-time-video">
     <h1>RealTimeVideo Practice</h1>
-    <video ref="video" width="640" height="480" autoplay playsinline></video>
+    <video
+      ref="video"
+      width="640"
+      height="480"
+      autoplay
+      playsinline
+      controls
+    ></video>
     <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
   </div>
 </template>
@@ -32,6 +39,8 @@ export default {
         console.error('Error accessing camera:', err)
         this.errorMessage =
           'Error accessing camera. Please check your permissions and try again.'
+        // 개발 기간 동안 테스트를 위해 기본 비디오 파일을 재생합니다.
+        this.$refs.video.src = 'path/to/default-video.mp4'
       }
     },
   },

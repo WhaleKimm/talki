@@ -10,8 +10,8 @@ RUN npm set cache /app/.npm-cache --global
 # npm 최신 버전으로 업데이트
 RUN npm install -g npm@latest
 
-# Vue CLI를 전역으로 설치
-RUN npm install -g @vue/cli@5.0.8
+# Vue CLI와 nodemon을 전역으로 설치
+RUN npm install -g @vue/cli@5.0.8 nodemon
 
 # package.json과 package-lock.json을 복사
 COPY package*.json ./
@@ -32,5 +32,5 @@ COPY . .
 # 포트 8080 노출
 EXPOSE 8080
 
-# Vue 개발 서버 시작
-CMD ["npm", "run", "serve"]
+# nodemon을 사용하여 파일 변경 감지 시 `npm audit fix --force` 실행 및 Vue 개발 서버 시작
+CMD ["nodemon", "--watch", "src", "--ext", "js,vue", "--exec", "npm audit fix --force && npm run serve"]
