@@ -1,0 +1,23 @@
+wsl --shutdown
+diskpart
+select vdisk file="C:\Users\tmdal\AppData\Local\Docker\wsl\data\ext4.vhdx"
+attach vdisk readonly
+compact vdisk
+detach vdisk
+exit
+
+# Docker Container 내부로 들어가기
+docker-compose exec app sh
+
+1. 기존 Docker 컨테이너와 이미지 제거
+docker-compose down
+docker rmi -f $(docker images -a -q)
+
+2.Docker 이미지 재빌드 및 실행
+docker-compose build --no-cache
+docker-compose up
+
+모든 정리 (이미지, 컨테이너, 네트워크, 볼륨)
+sh
+코드 복사
+docker system prune -a --volumes
